@@ -1,6 +1,7 @@
 using System.Collections;
 public static class Arrays
 {
+
   //0(N) tc, 0(N) sc
   public static int[] TwoSum(int[] array, int target)
   {
@@ -35,7 +36,7 @@ public static class Arrays
 
         if (currentSum == targetSum)
         {
-            return new int[]{leftPointer, rightPointer};
+            return new int[]{array[leftPointer], array[rightPointer]};
         }
         else if(currentSum < targetSum)
         {
@@ -50,4 +51,6 @@ public static class Arrays
 
      return new int[]{};
   }
+
+
 }
