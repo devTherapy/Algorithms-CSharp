@@ -9,7 +9,7 @@ public static class SortedSquare
         var counter = array.Length - 1;
         for (int i = 0; i < array.Length; i++)
         {
-            if(Math.Abs(array[firstIndex]) >  Math.Abs(lastIndex))
+            if(Math.Abs(array[firstIndex]) >  Math.Abs(array[lastIndex]))
             {
                returnArr[counter - i] = array[firstIndex] * array[firstIndex];
                firstIndex++;

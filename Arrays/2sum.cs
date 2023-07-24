@@ -7,7 +7,6 @@ public static class Arrays
   {
 
     Hashtable Hashtable = new Hashtable();
-
     for (int i = 0; i < array.Length; i++)
     {
         var diff = target - array[i];

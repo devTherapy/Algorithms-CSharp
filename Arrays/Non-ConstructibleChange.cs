@@ -2,19 +2,19 @@ public static class NonConstructibleChangeAlgo
 {
     public static int NonConstructibleChange(int[] coins) 
     {
-
+        Array.Sort(coins);
         var change = 0;
 
-        if (coins.Length == 0 || coins[0] > 1)
+        foreach (var coin in coins)
         {
-            return 1;
-        }
-        for (int i = 0; i < coins.Length; i++)
-        {
-            if (coins[0] > change + 1)
+            if (coin > change + 1)
+            {
                 return change + 1;
-                change += coins[0];
+            }
+
+            change += coin;
         }
-		return -1;
+
+        return change + 1;
 	}
 }
