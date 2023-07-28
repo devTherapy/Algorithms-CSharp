@@ -1,39 +1,34 @@
+using System.Runtime.InteropServices;
 using System;
 public static class CloseetValueINBST{
     public static int FindClosestValueInBst(BST tree, int target) {
 		// Write your code here.
 
-        var closestValue = tree.value;
-
+        var smallestDifference = int.MaxValue;
+        var closestValue = 0;
+        var currentNode = tree;
         while (tree != null)
         {
-            int currentDifference = Math.Abs(target - tree.value);
+            int currentDifference = Math.Abs(target - currentNode.value);
 
-            if (Math.Abs(closestValue - target)  > Math.Abs(tree.value - target))
+            if (currentDifference < smallestDifference)
             {
-                closestValue = tree.value;
+                smallestDifference = currentDifference;
+                closestValue = currentNode.value;
             }
 
-            if (target == tree.value)
+            if (target > currentNode.value)
             {
-                return closestValue;
+                currentNode = currentNode.right;
             }
-
-            else if (target > tree.value)
-            {
-                tree = tree.right;
-            }
-
+            
             else
             {
-                tree = tree.left;
+                currentNode = currentNode.left;
             }
         }
 		return closestValue;
-	}
-
-
-   
+	} 
 }
 
  public class BST {
