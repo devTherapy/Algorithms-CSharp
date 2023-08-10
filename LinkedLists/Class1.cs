@@ -1,5 +1,4 @@
-﻿namespace LinkedLists
-
+﻿namespace LinkedLists;
 public class LinkedList {
     public int value;
     public LinkedList next;
@@ -10,6 +9,7 @@ public class LinkedList {
     }
   }
 
+public class LinkedListAlgo{
   public LinkedList RemoveDuplicatesFromLinkedList(LinkedList linkedList) {
     // Write your code here.
     var current = linkedList;
@@ -17,14 +17,33 @@ public class LinkedList {
     {
         if (current.value == current.next.value)
         {
-            current.next = current.next.next
+            current.next = current.next.next;
         }
         else
         {
-            current = current.next
+            current = current.next;
         }
     }
     return linkedList;
   }
+
+    public LinkedList MiddleNode(LinkedList linkedList) {
+    // Write your code here.
+    var slowPointer = linkedList;
+
+    var fastpointer = linkedList;
+
+    var switcher = false;
+    while (fastpointer is not null)
+    {
+        if (switcher) slowPointer = slowPointer.next;
+        switcher = !switcher;
+        fastpointer = fastpointer.next;
+    }
+
+    return slowPointer;
+  }
+}
+  
 
   
