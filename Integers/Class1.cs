@@ -1,4 +1,5 @@
-﻿namespace Integers;
+﻿using System;
+namespace Integers;
 public class Integers
 {
     /// <summary>
@@ -36,3 +37,4 @@ public class Integers
         // -> a + h = 5
      }
 }
+
